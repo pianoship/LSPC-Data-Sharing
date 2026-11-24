@@ -1,10 +1,9 @@
 # LSPC-Data-Sharing
-hash.cpp: Benchmarks the SHA-256 execution time (T_hash) required by the proposed LSPC scheme.
+1. Comparative experiments
+This folder contains the benchmark tests and computation overhead comparisons across different schemes. It includes the C++ benchmark codes for fundamental cryptographic primitives (e.g., SHA-256, ECC, Pairing) and the Python plotting scripts to evaluate the generation and verification overhead of our proposed LSPC scheme against baseline schemes (e.g., HDMA, ALI, CLSS).
 
-main.cpp: Benchmarks fundamental cryptographic primitives (e.g., ECC scalar multiplication, modular exponentiation).
+2. Network_Simulation
+This folder contains the NS-3 simulation codes, vehicle mobility generators, and network plotting scripts. It is used to evaluate the network performance of the proposed scheme in a platooning scenario, including metrics such as Packet Delivery Ratio (PDR), end-to-end (E2E) delay, and performance variations under different vehicle distances, platoon sizes, and geometric parameters (K, M).
 
-bench_test.cpp: Specifically benchmarks the cryptographic primitives used in the ALI comparative scheme (e.g., ECDSA, AES, HMAC).
-
-pairing_bench.cpp: Specifically benchmarks the bilinear pairing operations used in the CLSS comparative scheme.
-
-computation_cost.py: Plots the comparison bar charts for message generation and verification overhead across different schemes, using the data obtained from the C++ benchmarks.
+3.Security_Analysis
+ It calculates and visualizes the security metrics of the proposed scheme, specifically the Share Union(U) size and the Forgery Probability(P_forge)
