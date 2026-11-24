@@ -17,9 +17,9 @@ double g_totalNetworkDelay = 0.0;
 // --- 动态全局参数 ---
 uint32_t g_kValue = 31;                 // 默认 K=31
 uint32_t g_mValue = 6;                  // 默认 M=6
-uint32_t g_payloadSize = 207;           // Bytes (114 + 3*13 = 153 Bytes)
-double g_verifDelay = 2.65e-6;          // 秒 ((4+2)*0.3317 us = 1.99 us)
-uint32_t g_bgNodesCount = 14;           // 背景竞争节点数量 (代表交通密度)
+uint32_t g_payloadSize = 207;           // Bytes
+double g_verifDelay = 2.65e-6;          // 秒 
+uint32_t g_bgNodesCount = 14;           // 背景节点数量 (代表交通密度)
 uint32_t g_platoonFollowers = 5;        // 编队跟随车数量 N_PF (默认 5, 支持 2-10 动态调整)
 
 void SendPacket(Ptr<Socket> socket) {
@@ -149,7 +149,6 @@ int main(int argc, char *argv[]) {
     double avgNetDelayMs = (g_rxCount > 0) ? (g_totalNetworkDelay / g_rxCount) * 1000.0 : 0.0;
     double lspaVerificationMs = g_verifDelay * 1000.0;
 
-    // 根据动态负载大小估算物理发送时间 (6 Mbps 带宽)
     double approxTxDelayMs = ((g_payloadSize + 40) * 8.0) / 6000000.0 * 1000.0; 
     double approxPropDelayMs = 0.0005;
 
