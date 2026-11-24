@@ -13,7 +13,6 @@ gen_times = [0.0099, 0.4320, 0.1620, 0.1730]    # 消息生成耗时 (ms)
 ver_times = [0.0024, 0.6477, 0.0400, 1.5333]    # 消息验证耗时 (ms)
 
 # 定义颜色与填充纹理 (Hatch)
-# '' 代表实心(无纹理)，'////' 代表密集斜杠，'....' 代表密集点阵，'xxxx' 代表密集交叉线
 colors = ['#d95f02', '#2b83ba', '#4575b4', '#74add1']
 hatches = ['', '////', '....', 'xxxx']
 
@@ -39,7 +38,6 @@ def plot_bar_chart(x_labels, y_data, title, y_label, filename, max_y_scale=1.2):
     ax.set_xticks(x)
     ax.set_xticklabels(x_labels, fontsize=11)
     
-    # 设置 y 轴上限，留出上方数据标签的空间
     ax.set_ylim(0, max(y_data) * max_y_scale)
     
     # 为每个条形图在上方添加具体的数值标签
