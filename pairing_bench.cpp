@@ -1,17 +1,17 @@
 #include <iostream>
 #include <chrono>
 #include <iomanip>
-#include <pbc/pbc.h> // 引入 PBC 库
+#include <pbc/pbc.h>
 
 using namespace std;
 using namespace std::chrono;
 
 int main() {
     // ==========================================
-    // 1. 初始化配对参数 (对齐 CLSS 论文设定)
-    // 曲线类型: Type A (超奇异椭圆曲线)
-    // r = 160 bits (对应 80-bit 安全级别)
-    // q = 512 bits (配合嵌入度 k=2，构成 1024-bit 目标群)
+    // 1. 初始化配对参数
+    // 曲线类型: Type A 
+    // r = 160 bits
+    // q = 512 bits
     // ==========================================
     pbc_param_t param;
     pairing_t pairing;
@@ -27,7 +27,7 @@ int main() {
     element_random(P);
     element_random(Q);
 
-    const int ITERATIONS = 10000; // 迭代 10000 次求平均值，消除系统误差
+    const int ITERATIONS = 10000; // 迭代 10000 次求平均值
 
     cout << "=====================================================" << endl;
     cout << "   Bilinear Pairing Benchmark (CLSS Paper Specs)     " << endl;
