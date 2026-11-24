@@ -1,0 +1,39 @@
+<routes>
+    <!-- 车辆动力学与跟驰模型定义 -->
+    <vType id="platoon_car" accel="2.6" decel="4.5" sigma="0.0" length="5.0" minGap="1.0" tau="0.1" maxSpeed="35.0" carFollowModel="Krauss"/>
+    <vType id="bg_car" accel="2.6" decel="4.5" sigma="0.5" length="5.0" minGap="2.5" tau="1.0" maxSpeed="35.0" carFollowModel="Krauss"/>
+
+    <!-- 编队车辆配置：1 辆领头车 + 10 辆跟随车 (v00 - v10)，维持 15m 物理间距 -->
+    <vehicle id="v00" type="platoon_car" depart="0.0" departPos="200.0" departSpeed="25.0" departLane="0"><route edges="edge1"/></vehicle>
+    <vehicle id="v01" type="platoon_car" depart="0.0" departPos="185.0" departSpeed="25.0" departLane="0"><route edges="edge1"/></vehicle>
+    <vehicle id="v02" type="platoon_car" depart="0.0" departPos="170.0" departSpeed="25.0" departLane="0"><route edges="edge1"/></vehicle>
+    <vehicle id="v03" type="platoon_car" depart="0.0" departPos="155.0" departSpeed="25.0" departLane="0"><route edges="edge1"/></vehicle>
+    <vehicle id="v04" type="platoon_car" depart="0.0" departPos="140.0" departSpeed="25.0" departLane="0"><route edges="edge1"/></vehicle>
+    <vehicle id="v05" type="platoon_car" depart="0.0" departPos="125.0" departSpeed="25.0" departLane="0"><route edges="edge1"/></vehicle>
+    <vehicle id="v06" type="platoon_car" depart="0.0" departPos="110.0" departSpeed="25.0" departLane="0"><route edges="edge1"/></vehicle>
+    <vehicle id="v07" type="platoon_car" depart="0.0" departPos="95.0"  departSpeed="25.0" departLane="0"><route edges="edge1"/></vehicle>
+    <vehicle id="v08" type="platoon_car" depart="0.0" departPos="80.0"  departSpeed="25.0" departLane="0"><route edges="edge1"/></vehicle>
+    <vehicle id="v09" type="platoon_car" depart="0.0" departPos="65.0"  departSpeed="25.0" departLane="0"><route edges="edge1"/></vehicle>
+    <vehicle id="v10" type="platoon_car" depart="0.0" departPos="50.0"  departSpeed="25.0" departLane="0"><route edges="edge1"/></vehicle>
+
+    <!-- 背景车流配置：14 辆背景车 (bg00 - bg13)，分布于车道 1、2、3 -->
+    <!-- 车道 1: 5 辆车，间距 50m -->
+    <vehicle id="bg00" type="bg_car" depart="0.0" departPos="300.0" departSpeed="25.0" departLane="1"><route edges="edge1"/></vehicle>
+    <vehicle id="bg01" type="bg_car" depart="0.0" departPos="250.0" departSpeed="25.0" departLane="1"><route edges="edge1"/></vehicle>
+    <vehicle id="bg02" type="bg_car" depart="0.0" departPos="200.0" departSpeed="25.0" departLane="1"><route edges="edge1"/></vehicle>
+    <vehicle id="bg03" type="bg_car" depart="0.0" departPos="150.0" departSpeed="25.0" departLane="1"><route edges="edge1"/></vehicle>
+    <vehicle id="bg04" type="bg_car" depart="0.0" departPos="100.0" departSpeed="25.0" departLane="1"><route edges="edge1"/></vehicle>
+
+    <!-- 车道 2: 5 辆车，间距 50m -->
+    <vehicle id="bg05" type="bg_car" depart="0.0" departPos="300.0" departSpeed="25.0" departLane="2"><route edges="edge1"/></vehicle>
+    <vehicle id="bg06" type="bg_car" depart="0.0" departPos="250.0" departSpeed="25.0" departLane="2"><route edges="edge1"/></vehicle>
+    <vehicle id="bg07" type="bg_car" depart="0.0" departPos="200.0" departSpeed="25.0" departLane="2"><route edges="edge1"/></vehicle>
+    <vehicle id="bg08" type="bg_car" depart="0.0" departPos="150.0" departSpeed="25.0" departLane="2"><route edges="edge1"/></vehicle>
+    <vehicle id="bg09" type="bg_car" depart="0.0" departPos="100.0" departSpeed="25.0" departLane="2"><route edges="edge1"/></vehicle>
+
+    <!-- 车道 3: 4 辆车，间距约 66.6m -->
+    <vehicle id="bg10" type="bg_car" depart="0.0" departPos="300.0" departSpeed="25.0" departLane="3"><route edges="edge1"/></vehicle>
+    <vehicle id="bg11" type="bg_car" depart="0.0" departPos="233.3" departSpeed="25.0" departLane="3"><route edges="edge1"/></vehicle>
+    <vehicle id="bg12" type="bg_car" depart="0.0" departPos="166.6" departSpeed="25.0" departLane="3"><route edges="edge1"/></vehicle>
+    <vehicle id="bg13" type="bg_car" depart="0.0" departPos="100.0" departSpeed="25.0" departLane="3"><route edges="edge1"/></vehicle>
+</routes>
