@@ -75,7 +75,7 @@ int main() {
     double T_sha_hkdf = duration_cast<microseconds>(end - start).count() / (double)ITERATIONS;
 
     // ==========================================
-    // 阶段二：AES-128-CTR 与 HMAC-SHA256 初始化 (207 Bytes)
+    // 阶段二：AES-128-CTR 与 HMAC-SHA256 初始化
     // ==========================================
     unsigned char aes_key[16], iv[16];
     RAND_bytes(aes_key, sizeof(aes_key));
